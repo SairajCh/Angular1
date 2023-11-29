@@ -1,0 +1,40 @@
+<div class="container">
+
+  <div class="headerPart">
+
+    <h2>Header Part</h2>
+
+
+  </div>
+
+  <div *ngIf="status; then template1; else template2;" class="contentPart">
+
+    <h2>Inside the contentPart</h2>
+
+  </div>
+
+  <ng-template #template1>
+    <div class="section1"></div>
+    <h1>inside section1</h1>
+
+  </ng-template>
+
+  <ng-template #template2>
+    <div class="section2">
+
+      <h1>section2</h1>
+    </div>
+
+  </ng-template>
+
+
+  <div class="footerPart">
+
+    Copyright@2023
+
+
+  </div>
+
+
+
+</div>

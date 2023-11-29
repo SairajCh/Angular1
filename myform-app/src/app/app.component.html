@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Welcome to Template driven forms</h1>
+
+
+    </div>
+    <hr />
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-12" style="text-align: center;">
+
+      <h2>FORM</h2>
+
+      <hr />
+      <form style="margin-left: 250px;" #myForm="ngForm">
+        
+        <table>
+          
+          <tr>
+            <td><label for="uname">Username:</label></td>
+            <td> <input type="text" name="fname" [(ngModel)]="fname" required="required" minlength="3" #c1="ngModel"/></td>
+            <td>
+              <span *ngIf="c1.touched && c1.invalid && c1.errors?.['required']" class="errors">Field is mandatory</span>
+            </td>
+            <td>
+              <span *ngIf="c1.touched && c1.invalid && c1.errors?.['minlength']" class="errors">Minlength should be 3</span>
+            </td>
+
+          </tr>
+          
+          <tr>
+            <td><label for="pwd">Password:</label></td>
+            <td> <input type="text" name="pwd" [(ngModel)]="pwd" required="required" minlength="3" pattern="^[a-z A-Z 0-9]*$" #c2="ngModel"/></td>
+            <td>
+              <span *ngIf="c2.touched && c2.invalid && c2.errors?.['required']" class="errors">Field is mandatory</span>
+            </td>
+            <td>
+              <span *ngIf="c2.touched && c2.invalid && c2.errors?.['pattern']" >It should be combination following:
+
+                <ul>
+                  <li>It is combination of a-z</li>
+                  <li>It is combination of 0-9</li>
+                  <li>It is combination of A-Z</li>
+                </ul>
+              </span>
+            </td>
+
+          </tr>
+
+
+          <tr>
+            <td>
+              <input type="submit" value="LOGIN"  (click)="valid(myForm)"/>
+            </td>
+          </tr>
+
+        </table>
+
+      </form>
+
+<hr/>
+<hr/>
+
+
+    </div>
+
+  </div>
+
+  <div class="row">
+<div class="col-md-12">
+
+  {{fname}}
+</div>
+
+  </div>
+
+
+</div>

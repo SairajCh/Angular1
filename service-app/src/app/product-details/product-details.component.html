@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">S.No</th>
+                    <th scope="col">PRODUCT_ID</th>
+                    <th scope="col">NAME</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let product of products;let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{product.pid}}</td>
+                    <td>{{product.pname}}</td>
+                    
+                  </tr>
+                
+                </tbody>
+              </table>
+
+
+        </div>
+
+    </div>
+
+</div>

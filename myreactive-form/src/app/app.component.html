@@ -1,0 +1,49 @@
+<div class="container">
+
+
+  <div class="row">
+
+    <div class="col-md-12">
+      <h1>Reactive Form Example</h1>
+
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-12">
+      
+      <h1>Form</h1>
+      
+      <form [formGroup]= "form">
+        <label for="username">USERNAME:</label>
+
+        <input type="text" formControlName="username" class="form-control"/>
+        <span *ngIf= "u.username.touched && u.username.errors?.['required'] ">Username is Mandatory</span>
+        <span *ngIf= "u.username.touched && u.username.errors?.['pattern']">
+          <ul>
+
+            <li>It should be range of a-z</li>
+            <li>It should be range of A-Z</li>
+            <li>It should be range of 0-9</li>
+          </ul>
+
+
+
+        </span>
+
+        <span *ngIf= "u.username.touched && u.username.errors?.['minlength'] ">Username should be minimum</span>
+
+
+      </form>
+
+
+
+    </div>
+
+  </div>
+
+
+</div>
